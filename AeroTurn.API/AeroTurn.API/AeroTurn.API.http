@@ -1,0 +1,6 @@
+@AeroTurn.API_HostAddress = http://localhost:5120
+
+GET {{AeroTurn.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,173 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\AeroTurn.API\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4C7DA593-19D6-5769-597C-ECDA8019BC93}|AeroTurn.API\\AeroTurn.API.csproj|e:\\aeroturn.api\\aeroturn.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C7DA593-19D6-5769-597C-ECDA8019BC93}|AeroTurn.API\\AeroTurn.API.csproj|solutionrelative:aeroturn.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C7DA593-19D6-5769-597C-ECDA8019BC93}|AeroTurn.API\\AeroTurn.API.csproj|e:\\aeroturn.api\\aeroturn.api\\controllers\\turnaroundcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C7DA593-19D6-5769-597C-ECDA8019BC93}|AeroTurn.API\\AeroTurn.API.csproj|solutionrelative:aeroturn.api\\controllers\\turnaroundcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C7DA593-19D6-5769-597C-ECDA8019BC93}|AeroTurn.API\\AeroTurn.API.csproj|e:\\aeroturn.api\\aeroturn.api\\models\\turnaroundevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C7DA593-19D6-5769-597C-ECDA8019BC93}|AeroTurn.API\\AeroTurn.API.csproj|solutionrelative:aeroturn.api\\models\\turnaroundevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C7DA593-19D6-5769-597C-ECDA8019BC93}|AeroTurn.API\\AeroTurn.API.csproj|e:\\aeroturn.api\\aeroturn.api\\models\\aeroturndbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C7DA593-19D6-5769-597C-ECDA8019BC93}|AeroTurn.API\\AeroTurn.API.csproj|solutionrelative:aeroturn.api\\models\\aeroturndbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C7DA593-19D6-5769-597C-ECDA8019BC93}|AeroTurn.API\\AeroTurn.API.csproj|e:\\aeroturn.api\\aeroturn.api\\controllers\\flightcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C7DA593-19D6-5769-597C-ECDA8019BC93}|AeroTurn.API\\AeroTurn.API.csproj|solutionrelative:aeroturn.api\\controllers\\flightcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C7DA593-19D6-5769-597C-ECDA8019BC93}|AeroTurn.API\\AeroTurn.API.csproj|e:\\aeroturn.api\\aeroturn.api\\models\\flight.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C7DA593-19D6-5769-597C-ECDA8019BC93}|AeroTurn.API\\AeroTurn.API.csproj|solutionrelative:aeroturn.api\\models\\flight.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C7DA593-19D6-5769-597C-ECDA8019BC93}|AeroTurn.API\\AeroTurn.API.csproj|e:\\aeroturn.api\\aeroturn.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C7DA593-19D6-5769-597C-ECDA8019BC93}|AeroTurn.API\\AeroTurn.API.csproj|solutionrelative:aeroturn.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C7DA593-19D6-5769-597C-ECDA8019BC93}|AeroTurn.API\\AeroTurn.API.csproj|e:\\aeroturn.api\\aeroturn.api\\models\\userlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C7DA593-19D6-5769-597C-ECDA8019BC93}|AeroTurn.API\\AeroTurn.API.csproj|solutionrelative:aeroturn.api\\models\\userlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C7DA593-19D6-5769-597C-ECDA8019BC93}|AeroTurn.API\\AeroTurn.API.csproj|e:\\aeroturn.api\\aeroturn.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{4C7DA593-19D6-5769-597C-ECDA8019BC93}|AeroTurn.API\\AeroTurn.API.csproj|solutionrelative:aeroturn.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FlightController.cs",
+              "DocumentMoniker": "E:\\AeroTurn.API\\AeroTurn.API\\Controllers\\FlightController.cs",
+              "RelativeDocumentMoniker": "AeroTurn.API\\Controllers\\FlightController.cs",
+              "ToolTip": "E:\\AeroTurn.API\\AeroTurn.API\\Controllers\\FlightController.cs",
+              "RelativeToolTip": "AeroTurn.API\\Controllers\\FlightController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-28T21:03:28.105Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "E:\\AeroTurn.API\\AeroTurn.API\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "AeroTurn.API\\Controllers\\AuthController.cs",
+              "ToolTip": "E:\\AeroTurn.API\\AeroTurn.API\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "AeroTurn.API\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-28T20:49:11.716Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UserLogin.cs",
+              "DocumentMoniker": "E:\\AeroTurn.API\\AeroTurn.API\\Models\\UserLogin.cs",
+              "RelativeDocumentMoniker": "AeroTurn.API\\Models\\UserLogin.cs",
+              "ToolTip": "E:\\AeroTurn.API\\AeroTurn.API\\Models\\UserLogin.cs",
+              "RelativeToolTip": "AeroTurn.API\\Models\\UserLogin.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-28T20:32:16.634Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TurnaroundController.cs",
+              "DocumentMoniker": "E:\\AeroTurn.API\\AeroTurn.API\\Controllers\\TurnaroundController.cs",
+              "RelativeDocumentMoniker": "AeroTurn.API\\Controllers\\TurnaroundController.cs",
+              "ToolTip": "E:\\AeroTurn.API\\AeroTurn.API\\Controllers\\TurnaroundController.cs",
+              "RelativeToolTip": "AeroTurn.API\\Controllers\\TurnaroundController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-17T15:38:15.231Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\AeroTurn.API\\AeroTurn.API\\Program.cs",
+              "RelativeDocumentMoniker": "AeroTurn.API\\Program.cs",
+              "ToolTip": "E:\\AeroTurn.API\\AeroTurn.API\\Program.cs",
+              "RelativeToolTip": "AeroTurn.API\\Program.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAkwDAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-17T15:13:13.66Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AeroTurnDbContext.cs",
+              "DocumentMoniker": "E:\\AeroTurn.API\\AeroTurn.API\\Models\\AeroTurnDbContext.cs",
+              "RelativeDocumentMoniker": "AeroTurn.API\\Models\\AeroTurnDbContext.cs",
+              "ToolTip": "E:\\AeroTurn.API\\AeroTurn.API\\Models\\AeroTurnDbContext.cs",
+              "RelativeToolTip": "AeroTurn.API\\Models\\AeroTurnDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-17T15:11:28.251Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TurnaroundEvent.cs",
+              "DocumentMoniker": "E:\\AeroTurn.API\\AeroTurn.API\\Models\\TurnaroundEvent.cs",
+              "RelativeDocumentMoniker": "AeroTurn.API\\Models\\TurnaroundEvent.cs",
+              "ToolTip": "E:\\AeroTurn.API\\AeroTurn.API\\Models\\TurnaroundEvent.cs",
+              "RelativeToolTip": "AeroTurn.API\\Models\\TurnaroundEvent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-17T15:10:42.055Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Flight.cs",
+              "DocumentMoniker": "E:\\AeroTurn.API\\AeroTurn.API\\Models\\Flight.cs",
+              "RelativeDocumentMoniker": "AeroTurn.API\\Models\\Flight.cs",
+              "ToolTip": "E:\\AeroTurn.API\\AeroTurn.API\\Models\\Flight.cs",
+              "RelativeToolTip": "AeroTurn.API\\Models\\Flight.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-17T15:09:36.282Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\AeroTurn.API\\AeroTurn.API\\appsettings.json",
+              "RelativeDocumentMoniker": "AeroTurn.API\\appsettings.json",
+              "ToolTip": "E:\\AeroTurn.API\\AeroTurn.API\\appsettings.json",
+              "RelativeToolTip": "AeroTurn.API\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-10-17T15:06:48.58Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

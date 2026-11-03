@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AeroTurn - Advanced OTP Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Modern Aviation Dark Theme */
+        body {
+            background-color: #0b0f19;
+            color: #e2e8f0;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-image: radial-gradient(circle at 50% 0%, #1e293b 0%, #0b0f19 70%);
+            min-height: 100vh;
+        }
+
+        /* Glassmorphism Cards */
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .neon-title {
+            color: #38bdf8;
+            text-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        /* Inputs */
+        .form-control-dark {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #fff;
+        }
+        .form-control-dark:focus {
+            background: rgba(15, 23, 42, 0.9);
+            border-color: #38bdf8;
+            box-shadow: 0 0 0 0.25rem rgba(56, 189, 248, 0.25);
+            color: #fff;
+        }
+
+        /* Flight List Items */
+        .flight-item {
+            background: rgba(15, 23, 42, 0.5);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            margin-bottom: 10px;
+        }
+        .flight-item:hover {
+            border-color: #38bdf8;
+            transform: translateX(5px);
+            box-shadow: -5px 0 15px rgba(56, 189, 248, 0.2);
+        }
+
+        /* Timeline UI */
+        .timeline {
+            border-left: 2px solid #38bdf8;
+            padding-left: 20px;
+            margin-left: 10px;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -27px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            background: #10b981;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #10b981;
+        }
+        
+        .timeline-time { font-size: 0.85rem; color: #94a3b8; }
+        .timeline-content { background: rgba(15, 23, 42, 0.5); padding: 10px 15px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); }
+        
+        /* Badges */
+        .badge-ai { background: linear-gradient(45deg, #f59e0b, #ef4444); color: white; }
+    </style>
+</head>
+<body>
+
+    <!-- 1. LOGIN SCREEN -->
+    <div id="loginScreen" class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+        <div class="glass-card p-5" style="width: 100%; max-width: 450px;">
+            <div class="text-center mb-4">
+                <h2 class="neon-title"><i class="fa-solid fa-plane-departure"></i> AeroTurn</h2>
+                <p class="text-secondary">AI-Powered Turnaround Management</p>
+            </div>
+            
+            <div class="mb-4">
+                <label class="form-label text-light"><i class="fa-solid fa-user"></i> Operator ID</label>
+                <input type="text" id="username" class="form-control form-control-dark" placeholder="admin, pia_user, ek_user">
+            </div>
+            <div class="mb-4">
+                <label class="form-label text-light"><i class="fa-solid fa-lock"></i> Security Key</label>
+                <input type="password" id="password" class="form-control form-control-dark" placeholder="••••••••">
+            </div>
+            <button class="btn btn-info w-100 fw-bold shadow-sm" onclick="login()" style="border-radius: 8px;">
+                <i class="fa-solid fa-right-to-bracket"></i> Authenticate
+            </button>
+            <div id="loginError" class="alert alert-danger mt-3 py-2 text-center d-none" style="border-radius: 8px;"></div>
+        </div>
+    </div>
+
+    <!-- 2. DASHBOARD SCREEN -->
+    <div id="dashboardScreen" class="d-none">
+        
+        <!-- Modern Top Navbar -->
+        <nav class="navbar glass-card mx-3 mt-3 px-4 py-3 border-0">
+            <div class="d-flex align-items-center">
+                <h3 class="neon-title mb-0"><i class="fa-solid fa-plane-departure me-2"></i>AeroTurn Live</h3>
+                <span class="badge bg-success ms-3 shadow"><i class="fa-solid fa-satellite-dish pulse-icon"></i> System Online</span>
+            </div>
+            <div class="d-flex align-items-center">
+                <div class="me-4 text-end">
+                    <div class="small text-secondary">Logged in as</div>
+                    <div class="fw-bold text-info" id="userInfo"></div>
+                </div>
+                <button class="btn btn-outline-danger" style="border-radius: 8px;" onclick="logout()">
+                    <i class="fa-solid fa-power-off"></i>
+                </button>
+            </div>
+        </nav>
+
+        <div class="container-fluid mt-4 px-4">
+            <div class="row g-4">
+                
+                <!-- Left: Flight Tracking List -->
+                <div class="col-lg-4">
+                    <div class="glass-card p-4 h-100">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h5 class="text-white mb-0"><i class="fa-solid fa-list-check text-info me-2"></i> Active Flights</h5>
+                            <button class="btn btn-sm btn-outline-info rounded-pill px-3" onclick="createMockFlight()">
+                                <i class="fa-solid fa-plus"></i> Schedule
+                            </button>
+                        </div>
+                        <div id="flightsList" class="overflow-auto" style="max-height: 70vh; padding-right: 5px;">
+                            <!-- Flights will populate here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Live AI Event Timeline -->
+                <div class="col-lg-8">
+                    <div class="glass-card p-4 h-100">
+                        <div class="d-flex justify-content-between align-items-center mb-4 pb-3 border-bottom border-secondary">
+                            <div>
+                                <h5 class="text-white mb-1"><i class="fa-solid fa-clock-rotate-left text-info me-2"></i> Turnaround Timeline</h5>
+                                <div id="selectedFlightTitle" class="text-secondary small">Select a flight from the left panel to monitor OTP.</div>
+                            </div>
+                            
+                            <!-- AI Simulation Button -->
+                            <button id="aiButton" class="btn btn-warning fw-bold d-none shadow" style="border-radius: 8px;" onclick="simulateAI()">
+                                <i class="fa-solid fa-robot"></i> Simulate AI Detection
+                            </button>
+                        </div>
+                        
+                        <!-- Timeline Container -->
+                        <div class="timeline mt-4" id="eventsList">
+                            <div class="text-center text-secondary py-5">
+                                <i class="fa-solid fa-satellite fa-3x mb-3" style="opacity: 0.2;"></i>
+                                <p>Awaiting flight telemetry...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- JS Logic (Same robust connection as before) -->
+    <script>
+        const apiUrl = 'https://localhost:7029/api';
+        let currentFlightId = null;
+
+        async function login() {
+            const user = document.getElementById('username').value;
+            const pass = document.getElementById('password').value;
+            const errorDiv = document.getElementById('loginError');
+            errorDiv.classList.add('d-none');
+
+            try {
+                const res = await fetch(`${apiUrl}/Auth/login`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username: user, password: pass })
+                });
+
+                if (res.ok) {
+                    const data = await res.json();
+                    localStorage.setItem('token', data.token);
+                    localStorage.setItem('role', data.role);
+                    localStorage.setItem('airline', data.airline);
+                    localStorage.setItem('username', data.username);
+                    showDashboard();
+                } else {
+                    errorDiv.classList.remove('d-none');
+                    errorDiv.innerText = "Access Denied: Invalid Credentials!";
+                }
+            } catch (err) {
+                errorDiv.classList.remove('d-none');
+                errorDiv.innerText = "Error: Cannot connect to Backend Server.";
+            }
+        }
+
+        function logout() {
+            localStorage.clear();
+            document.getElementById('dashboardScreen').classList.add('d-none');
+            document.getElementById('loginScreen').classList.remove('d-none');
+            document.getElementById('username').value = '';
+            document.getElementById('password').value = '';
+        }
+
+        function showDashboard() {
+            document.getElementById('loginScreen').classList.add('d-none');
+            document.getElementById('dashboardScreen').classList.remove('d-none');
+            
+            const role = localStorage.getItem('role');
+            const airline = localStorage.getItem('airline');
+            document.getElementById('userInfo').innerHTML = `<i class="fa-regular fa-id-badge"></i> ${localStorage.getItem('username').toUpperCase()} <br><span class="badge bg-secondary" style="font-size:0.7rem">${role} | ${airline}</span>`;
+
+            if (role !== 'AirlineOfficer') {
+                document.getElementById('aiButton').classList.remove('d-none');
+            } else {
+                document.getElementById('aiButton').classList.add('d-none');
+            }
+            loadFlights();
+        }
+
+        async function loadFlights() {
+            const token = localStorage.getItem('token');
+            const res = await fetch(`${apiUrl}/Flight/all-flights`, {
+                headers: { 'Authorization': `Bearer ${token}` }
+            });
+
+            if (res.ok) {
+                const flights = await res.json();
+                const list = document.getElementById('flightsList');
+                list.innerHTML = '';
+
+                flights.forEach(f => {
+                    const html = `
+                        <div class="flight-item p-3 shadow-sm" onclick="selectFlight(${f.id}, '${f.flightNumber}')" style="cursor: pointer;">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-info fs-5"><i class="fa-solid fa-plane"></i> ${f.flightNumber}</span>
+                                <span class="badge bg-dark border border-secondary">Gate: ${f.assignedGate}</span>
+                            </div>
+                            <div class="text-secondary small mt-2">
+                                Operator: <span class="text-light">${f.airline}</span> <br>
+                                Status: <span class="text-success"><i class="fa-solid fa-circle-check"></i> ${f.status}</span>
+                            </div>
+                        </div>
+                    `;
+                    list.insertAdjacentHTML('beforeend', html);
+                });
+            }
+        }
+
+        async function createMockFlight() {
+            const token = localStorage.getItem('token');
+            const airlineContext = localStorage.getItem('airline');
+            const airlineName = airlineContext === 'ALL' ? 'MockAir' : airlineContext;
+            const newFlight = {
+                flightNumber: "FL-" + Math.floor(Math.random() * 1000),
+                airline: airlineName,
+                assignedGate: "G-" + Math.floor(Math.random() * 10),
+                scheduledArrivalTime: new Date().toISOString(),
+                targetOffBlockTime: new Date(new Date().getTime() + 60*60*1000).toISOString()
+            };
+
+            await fetch(`${apiUrl}/Flight/add-flight`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+                body: JSON.stringify(newFlight)
+            });
+            loadFlights();
+        }
+
+        function selectFlight(id, flightNum) {
+            currentFlightId = id;
+            document.getElementById('selectedFlightTitle').innerHTML = `Monitoring OTP for <strong class="text-white">${flightNum}</strong>`;
+            loadEvents();
+        }
+
+        async function loadEvents() {
+            if(!currentFlightId) return;
+            const token = localStorage.getItem('token');
+            const res = await fetch(`${apiUrl}/Turnaround/events/${currentFlightId}`, {
+                headers: { 'Authorization': `Bearer ${token}` }
+            });
+
+            const list = document.getElementById('eventsList');
+            list.innerHTML = '';
+
+            if (res.ok) {
+                const events = await res.json();
+                if(events.length === 0) {
+                    list.innerHTML = '<div class="text-muted text-center mt-4">No AI events detected yet.</div>';
+                    return;
+                }
+                events.forEach(ev => {
+                    const time = new Date(ev.startTime).toLocaleTimeString();
+                    const html = `
+                        <div class="timeline-item">
+                            <div class="timeline-time mb-1"><i class="fa-regular fa-clock"></i> ${time}</div>
+                            <div class="timeline-content shadow-sm">
+                                <div class="d-flex justify-content-between">
+                                    <strong class="text-light">${ev.eventName}</strong>
+                                    <span class="badge badge-ai shadow-sm px-2 py-1"><i class="fa-solid fa-eye"></i> ${ev.detectedBy}</span>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    list.insertAdjacentHTML('beforeend', html);
+                });
+            } else {
+                list.innerHTML = `<div class="alert alert-danger border-0 glass-card text-center"><i class="fa-solid fa-triangle-exclamation"></i> Security Lock: You are not authorized to view ${document.getElementById('selectedFlightTitle').innerText.split(' ').pop()}'s data.</div>`;
+            }
+        }
+
+        async function simulateAI() {
+            if(!currentFlightId) {
+                alert("Please select a flight to monitor first!");
+                return;
+            }
+            
+            // Randomly select a turnaround event for visual impact
+            const eventsArr = ["Baggage Carts Arrived", "Refueling Started", "Catering Truck Docked", "Passenger Boarding Began", "Chocks Removed"];
+            const randomEvent = eventsArr[Math.floor(Math.random() * eventsArr.length)];
+
+            const token = localStorage.getItem('token');
+            const aiEvent = {
+                flightId: currentFlightId,
+                eventName: randomEvent,
+                startTime: new Date().toISOString(),
+                detectedBy: "YOLO_Edge_Node_01"
+            };
+
+            const res = await fetch(`${apiUrl}/Turnaround/log-event`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+                body: JSON.stringify(aiEvent)
+            });
+
+            if (res.ok) loadEvents();
+        }
+
+        window.onload = () => {
+            if(localStorage.getItem('token')) showDashboard();
+        }
+    </script>
+</body>
+</html>
